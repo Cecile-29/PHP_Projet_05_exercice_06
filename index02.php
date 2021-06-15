@@ -15,12 +15,21 @@
         <div class="row border border-primary rounded p-3 m-4 text-secondary justify-content-center">
         <a class="mr-3" href="index.php">cliquez pour revenir</a>
             <?php 
+                // if(!($_GET['langage'] == true))
+                // echo "<script language='JavaScript'>alert('paramètre langage inexistant !')</script>";
+                // if(!($_GET['serveur'] == true))
+                // echo "<script language='JavaScript'>alert('paramètre serveur inexistant !')</script>";
+                // echo 'langage : '. strip_tags($_GET['langage']). '  '. 'Serveur : '. '  '. strip_tags($_GET['serveur']);  
+            ?>
+            <!-- avec la fonction htmlspecialchars -->
+            <?php 
                 if(!($_GET['langage'] == true))
                 echo "<script language='JavaScript'>alert('paramètre langage inexistant !')</script>";
                 if(!($_GET['serveur'] == true))
                 echo "<script language='JavaScript'>alert('paramètre serveur inexistant !')</script>";
-                echo 'langage : '. strip_tags($_GET['langage']). '  '. 'Serveur : '. '  '. strip_tags($_GET['serveur']);  
+                echo 'langage : '. htmlspecialchars($_GET['langage']). '  '. 'Serveur : '. '  '. htmlspecialchars($_GET['serveur']);  
             ?>
+
             <?php
             // if (isset($_GET['langage']) AND isset($_GET['serveur'])) // vérification des variables
             // {
