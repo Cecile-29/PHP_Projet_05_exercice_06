@@ -15,13 +15,24 @@
         <div class="row border border-primary rounded p-3 m-4 text-secondary justify-content-center">
         <a class="mr-3" href="index.php">cliquez pour revenir</a>
             <?php 
-                echo 'langage : '. $_GET['langage']. '  '. 'Serveur : '. '  '. $_GET['serveur'];
                 if(!($_GET['langage'] == true))
                 echo "<script language='JavaScript'>alert('paramètre langage inexistant !')</script>";
                 if(!($_GET['serveur'] == true))
                 echo "<script language='JavaScript'>alert('paramètre serveur inexistant !')</script>";
+                echo 'langage : '. strip_tags($_GET['langage']). '  '. 'Serveur : '. '  '. strip_tags($_GET['serveur']);  
+            ?>
+            <?php
+            // if (isset($_GET['langage']) AND isset($_GET['serveur'])) // vérification des variables
+            // {
+	        // echo 'langage : '. strip_tags($_GET['langage']). '  '. 'Serveur : '. '  '. strip_tags($_GET['serveur']);  
+            // }   
+            // else // Il manque des paramètres, on avertit le visiteur
+            // {
+	        // echo "<script language='JavaScript'>alert('paramètre serveur inexistant !')</script>";
+            // }
             ?>
         </div>
     </div>
 </body>
 </html>
+<!-- pour tests de suppression de la balise html <p style=color:red; >lili</p> -->
